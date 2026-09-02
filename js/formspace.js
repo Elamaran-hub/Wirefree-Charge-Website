@@ -78,20 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerHTML = 'Routing to Engineering Team...';
 
       try {
-        await fetch('https://formspree.io/f/xblywzye', {
+        const response = await fetch('https://formsubmit.co/ajax/elamaranyuvaraj@gmail.com', {
           method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json' 
+          },
           body: JSON.stringify({
+            _subject: `New WireFree Charge Pilot: ${name} (${org})`,
+            _template: 'table',
             track: trackConfig[currentTrack].title,
-            name: name,
-            email: email,
+            fullName: name,
+            workEmail: email,
             organization: org,
-            scope: dynamicVal,
+            projectScope: dynamicVal || 'Standard Pilot',
             timeline: timeline,
-            message: message,
-            routedTo: 'elamaranyuvaraj@gmail.com'
+            message: message || 'N/A'
           })
         });
+        const resData = await response.json();
+        console.log('FormSubmit delivery result:', resData);
       } catch (err) {
         console.log('Form submission logged locally:', err);
       }
