@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WireFree Charge | Commercial Wireless EV Charging Infrastructure</title>
+  <meta name="description" content="Commercial 85 kHz resonant inductive wireless EV charging infrastructure for fleets and highway corridors. Zero downtime, zero plug hazards.">
+  <meta name="keywords" content="Wireless EV Charging, Dynamic Charging, Inductive Power Transfer, SAE J2954, EV Infrastructure, Fleet Charging">
+
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="WireFree Charge | Wireless EV Charging">
+  <meta property="og:description" content="Charge your EV wirelessly as you park and drive. 85-95% efficiency, zero plug-in downtime.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cobalt: '#2563EB',
+              mint: '#10B981',
+              dark: '#0F172A',
+              slate: '#334155',
+              card: '#FFFFFF',
+              border: '#E2E8F0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#F8FAFC] text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Ambient Radial Glow -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[500px] bg-radial-glow pointer-events-none z-0"></div>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-md shadow-blue-500/20">
+          <i data-lucide="zap" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 block">WireFree<span class="text-blue-600">Charge</span></span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase font-semibold">Adaptive WPT Mobility</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <a href="#technology" class="hover:text-blue-600 transition-colors">Technology</a>
+        <a href="#simulator" class="hover:text-blue-600 transition-colors flex items-center space-x-1.5">
+          <span>Live Simulator</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        </a>
+        <a href="#solutions" class="hover:text-blue-600 transition-colors">Solutions</a>
+        <a href="#architecture" class="hover:text-blue-600 transition-colors">Architecture</a>
+        <a href="#economics" class="hover:text-blue-600 transition-colors">Fleet ROI</a>
+        <a href="#deploy" class="hover:text-blue-600 transition-colors">Deploy With Us</a>
+      </nav>
+
+      <!-- Nav CTA -->
+      <div class="hidden md:flex items-center space-x-4">
+        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-semibold">
+          SAE J2954 COMPLIANT
+        </span>
+        <a href="#deploy" class="btn-primary px-5 py-2.5 rounded-xl text-sm flex items-center space-x-2">
+          <span>Deploy With Us</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="btnMobileMenu" class="md:hidden p-2 text-slate-700 hover:text-black" aria-label="Toggle Navigation">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-6 bg-white border-b border-slate-200 space-y-3 font-semibold text-slate-700">
+      <a href="#technology" class="block py-2 hover:text-blue-600">Technology</a>
+      <a href="#simulator" class="block py-2 hover:text-blue-600">Live Simulator</a>
+      <a href="#solutions" class="block py-2 hover:text-blue-600">Solutions</a>
+      <a href="#architecture" class="block py-2 hover:text-blue-600">Architecture</a>
+      <a href="#economics" class="block py-2 hover:text-blue-600">Fleet ROI</a>
+      <a href="#deploy" class="block py-2 text-blue-600 font-bold">Deploy With Us</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="relative z-10 pt-28">
+
+    <!-- HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
+      
+      <!-- Announcement Pill -->
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full badge-glow text-xs font-mono font-semibold mb-8">
+        <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+        <span>Commercial High-Speed Inductive Power Infrastructure</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 max-w-5xl mx-auto leading-[1.12]">
+        The Road That Charges Your EV <br class="hidden sm:inline" />
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600">
+          As You Drive & Park.
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+        Eliminating charging queues, cable wear, and massive battery deadweight. Powered by <strong class="text-slate-900 font-semibold">85 kHz Resonant Inductive Power Transfer</strong> with vehicle-side adaptive auto-tuning, cutting roadway deployment costs by <strong class="text-emerald-600 font-bold">50%</strong>.
+      </p>
+
+      <!-- CTA Action Group -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#deploy" class="w-full sm:w-auto btn-primary px-8 py-4 rounded-xl text-base flex items-center justify-center space-x-2">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          <span>Deploy With Us</span>
+        </a>
+        <a href="#simulator" class="w-full sm:w-auto btn-secondary px-8 py-4 rounded-xl text-base flex items-center justify-center space-x-2">
+          <i data-lucide="play" class="w-5 h-5 text-blue-600"></i>
+          <span>Launch Interactive Simulator</span>
+        </a>
+      </div>
+
+      <!-- Core Technical Spec Metrics (Clean Bright Style) -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+        
+        <div class="glass-panel p-6 rounded-2xl text-left border-t-4 border-blue-600">
+          <div class="text-slate-500 text-xs font-mono uppercase tracking-wider mb-1 font-semibold">Transmission Eff.</div>
+          <div class="text-3xl font-extrabold text-slate-900">85–95%</div>
+          <p class="text-xs text-slate-500 mt-2 font-medium">Matches wired DC fast charging</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl text-left border-t-4 border-emerald-600">
+          <div class="text-slate-500 text-xs font-mono uppercase tracking-wider mb-1 font-semibold">Standard Frequency</div>
+          <div class="text-3xl font-extrabold text-slate-900">85 kHz</div>
+          <p class="text-xs text-slate-500 mt-2 font-medium">SAE J2954 Interoperability</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl text-left border-t-4 border-indigo-600">
+          <div class="text-slate-500 text-xs font-mono uppercase tracking-wider mb-1 font-semibold">Ground Clearance</div>
+          <div class="text-3xl font-extrabold text-slate-900">10–25 cm</div>
+          <p class="text-xs text-slate-500 mt-2 font-medium">Adaptive for Indian SUVs & Cabs</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl text-left border-t-4 border-teal-600">
+          <div class="text-slate-500 text-xs font-mono uppercase tracking-wider mb-1 font-semibold">Roadside Capex</div>
+          <div class="text-3xl font-extrabold text-emerald-600">-50%</div>
+          <p class="text-xs text-slate-500 mt-2 font-medium">Passive coils; zero buried electronics</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LIVE INTERACTIVE SIMULATOR SECTION -->
+    <section id="simulator" class="py-20 bg-dot-pattern border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <div class="inline-flex items-center space-x-2 text-xs font-mono text-blue-600 uppercase tracking-wider mb-2 font-bold">
+              <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+              <span>Interactive Physics Engine</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Dynamic Highway Charging Simulator
+            </h2>
+            <p class="text-slate-600 mt-2 max-w-2xl text-sm">
+              Watch how our segmented roadway transmitter coils activate for milliseconds only when an authenticated vehicle receiver passes directly overhead.
+            </p>
+          </div>
+
+          <!-- Mode Switch Buttons -->
+          <div class="flex items-center p-1.5 rounded-xl bg-white border border-slate-200 shadow-sm self-start md:self-auto">
+            <button id="btnModeDynamic" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm transition-all">
+              Dynamic Highway (In-Motion)
+            </button>
+            <button id="btnModeStatic" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all">
+              Static Depot Pad
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulation Container Card -->
+        <div class="glass-panel rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+          
+          <!-- Canvas Visualizer -->
+          <div class="relative w-full bg-[#0F172A] overflow-hidden">
+            <canvas id="chargingSimulatorCanvas" class="w-full h-[360px] block cursor-crosshair"></canvas>
+            
+            <!-- Floating Live Status Overlay -->
+            <div class="absolute top-4 left-4 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 font-mono text-xs space-y-1 shadow-md">
+              <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-slate-600">Coil Status:</span>
+                <span id="simActiveCoil" class="text-emerald-600 font-bold">Standby (Scanning)</span>
+              </div>
+              <div class="text-slate-600">
+                Resonant Frequency: <span class="text-blue-600 font-bold">85.0 kHz (Locked)</span>
+              </div>
+            </div>
+
+            <!-- Floating Metrics -->
+            <div class="absolute top-4 right-4 flex space-x-3">
+              <div class="px-4 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-right shadow-md">
+                <div class="text-[10px] font-mono text-slate-500 uppercase font-semibold">Power Rate</div>
+                <div id="simPowerDisplay" class="text-xl font-bold font-mono text-emerald-600">0.0 kW</div>
+              </div>
+              <div class="px-4 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-right shadow-md">
+                <div class="text-[10px] font-mono text-slate-500 uppercase font-semibold">Efficiency (η)</div>
+                <div id="simEffDisplay" class="text-xl font-bold font-mono text-blue-600">-- %</div>
+              </div>
+              <div class="px-4 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-right shadow-md">
+                <div class="text-[10px] font-mono text-slate-500 uppercase font-semibold">EV Battery SoC</div>
+                <div id="simSocDisplay" class="text-xl font-bold font-mono text-indigo-600">42.0%</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controls Strip -->
+          <div class="p-6 bg-white border-t border-slate-200 grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+            
+            <!-- Speed Control -->
+            <div>
+              <div class="flex justify-between text-xs font-mono text-slate-700 mb-2 font-semibold">
+                <span>Vehicle Speed</span>
+                <span id="simSpeedVal" class="text-blue-600 font-bold">80 km/h</span>
+              </div>
+              <input type="range" id="simSpeed" min="40" max="140" value="80" step="5">
+            </div>
+
+            <!-- Air Gap Control -->
+            <div>
+              <div class="flex justify-between text-xs font-mono text-slate-700 mb-2 font-semibold">
+                <span>Ground Clearance (Air Gap)</span>
+                <span id="simGapVal" class="text-emerald-600 font-bold">15 cm</span>
+              </div>
+              <input type="range" id="simGap" min="10" max="25" value="15" step="1">
+            </div>
+
+            <!-- Lateral Offset Control -->
+            <div>
+              <div class="flex justify-between text-xs font-mono text-slate-700 mb-2 font-semibold">
+                <span>Receiver Offset (Steering)</span>
+                <span id="simAlignVal" class="text-indigo-600 font-bold">0 cm</span>
+              </div>
+              <input type="range" id="simAlign" min="-15" max="15" value="0" step="1">
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center justify-end space-x-3">
+              <button id="btnToggleSim" class="px-4 py-2.5 rounded-xl text-xs font-semibold btn-secondary">
+                Pause Simulation
+              </button>
+              <button id="btnResetSim" class="px-4 py-2.5 rounded-xl text-xs font-semibold btn-secondary hover:text-blue-600">
+                Reset
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE PROBLEM VS WIREFREE ADVANTAGE -->
+    <section id="technology" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold">The Infrastructure Bottleneck</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2 tracking-tight">
+          Why Wired Fast Charging Cannot Scale in India
+        </h2>
+        <p class="text-slate-600 mt-4 text-base">
+          India's EV-to-public-charger ratio is <strong class="text-slate-900">1:215</strong>. Heavy plugs create idle fleet downtime, extreme grid spikes, and monsoon cable hazards.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Status Quo Card -->
+        <div class="glass-panel p-8 rounded-3xl border-red-200 bg-gradient-to-b from-red-50/50 to-white">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold">
+              <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Status Quo: Conductive Wired Plugs</h3>
+          </div>
+
+          <div class="space-y-4 text-sm text-slate-700 mb-8">
+            <div class="flex items-start space-x-3">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+              <p><strong class="text-slate-900">Crippling Fleet Downtime:</strong> 45 minutes to 8 hours wasted per shift. Commercial cabs & logistics vans lose up to 20% of their revenue-earning hours.</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+              <p><strong class="text-slate-900">Monsoon & Cable Wear Hazards:</strong> Handling heavy high-voltage cables in wet weather causes socket wear, corrosion, and electrical safety concerns.</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"></i>
+              <p><strong class="text-slate-900">Prohibitive Battery Weight:</strong> Cabs must carry massive 40-70 kWh battery packs (adding ₹2-4 Lakhs cost) just to fight range anxiety.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
+            <div class="relative group">
+              <img src="assets/ev_charging_rain.jpg" alt="Rain charging hazard" class="w-full h-36 object-cover rounded-xl border border-slate-200 group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/75 px-2 py-0.5 rounded text-white">Monsoon Cable Hazard</span>
+            </div>
+            <div class="relative group">
+              <img src="assets/worn_charger_plug.jpg" alt="Worn plug" class="w-full h-36 object-cover rounded-xl border border-slate-200 group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/75 px-2 py-0.5 rounded text-white">Damaged Contacts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WireFree Charge Card -->
+        <div class="glass-panel p-8 rounded-3xl border-blue-200 bg-gradient-to-b from-blue-50/50 to-white relative overflow-hidden">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold shadow-sm">
+              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">WireFree Charge Innovation</h3>
+          </div>
+
+          <div class="space-y-4 text-sm text-slate-700 mb-8">
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i>
+              <p><strong class="text-slate-900">Zero Manual Effort:</strong> Automatic inductive connection upon parking (Phase A) or continuous opportunity charging while driving (Phase B).</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i>
+              <p><strong class="text-slate-900">Vehicle-Side Adaptive Intelligence:</strong> Active auto-tuning circuits and suspension actuators are mounted on the vehicle. Roadway coils remain passive and indestructible.</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i>
+              <p><strong class="text-slate-900">Scheduled Repaving Integration:</strong> We don't dig up healthy roads; coils are installed during planned 5-7 year asphalt overlay or lane expansion tenders.</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl overflow-hidden border border-blue-200 shadow-md relative group">
+            <img src="assets/wpt_diagram.jpg" alt="Wireless charging diagram" class="w-full h-44 object-cover group-hover:scale-102 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 text-xs font-mono text-white bg-slate-900/80 px-3 py-1 rounded-md border border-white/20">
+              85 kHz Resonant Power Transfer Flow
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PHASED PRODUCT ARCHITECTURE -->
+    <section id="solutions" class="py-24 bg-slate-100/70 border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold">Two-Phased Commercial Roadmap</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2 tracking-tight">
+            Commercial Rollout Architecture
+          </h2>
+          <p class="text-slate-600 mt-4 text-base">
+            From depot parking bays today, to highway opportunity corridors tomorrow.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Phase A Card -->
+          <div class="glass-panel p-8 rounded-3xl relative flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-mono mb-4 font-bold">
+                <span>Phase A (Commercial Depot MVP)</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">WireFree Hub: Static Commercial Charging</h3>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Ground-embedded charging pads installed in controlled commercial parking spaces, fleet maintenance depots, corporate tech parks, and airport taxi waiting ranks.
+              </p>
+
+              <ul class="mt-6 space-y-3 text-sm text-slate-700 font-medium">
+                <li class="flex items-center space-x-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 font-bold"></i>
+                  <span>Power rating: 3.3 kW to 22 kW continuous charging</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 font-bold"></i>
+                  <span>Foreign Object Detection (FOD) with millisecond safety cutoff</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600 font-bold"></i>
+                  <span>Target customers: Commercial taxi fleets, delivery hubs, malls</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-500 font-semibold">Status: Bench MVP Ready</span>
+              <a href="#deploy" class="text-blue-600 font-bold hover:underline flex items-center space-x-1">
+                <span>Request Depot Trial</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Phase B Card -->
+          <div class="glass-panel p-8 rounded-3xl relative flex flex-col justify-between border-blue-300">
+            <div>
+              <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-mono mb-4 font-bold">
+                <span>Phase B (Next-Gen Dynamic Roadways)</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">WireFree Highway: Dynamic In-Motion Charging</h3>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Segmented highway charging lanes embedded during scheduled 5-7 year asphalt overlay cycles or 4-to-6 lane expansions. Vehicles capture energy in-motion.
+              </p>
+
+              <ul class="mt-6 space-y-3 text-sm text-slate-700 font-medium">
+                <li class="flex items-center space-x-2">
+                  <i data-lucide="check" class="w-4 h-4 text-blue-600 font-bold"></i>
+                  <span>Electrifying only 25% of the highway grants continuous range</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i data-lucide="check" class="w-4 h-4 text-blue-600 font-bold"></i>
+                  <span>Transfers +0.35 kWh surplus energy per km at 100 km/h</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i data-lucide="check" class="w-4 h-4 text-blue-600 font-bold"></i>
+                  <span>Integrated with FASTag automatic per-kWh toll collection</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-500 font-semibold">Target: NHAI Repaving Concessions</span>
+              <a href="#deploy" class="text-blue-600 font-bold hover:underline flex items-center space-x-1">
+                <span>Partner on Highway EPC</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL ARCHITECTURE & GRIDMIND AI -->
+    <section id="architecture" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold">Deep Engineering & Patent Portfolio</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2 tracking-tight">
+          System Hardware & GridMind AI
+        </h2>
+        <p class="text-slate-600 mt-4 text-base">
+          Our unified ecosystem combines sub-road passive inductive pads, active receiver vehicle kits, and our cloud-powered <strong class="text-slate-900 font-semibold">GridMind AI</strong> telemetry platform.
+        </p>
+      </div>
+
+      <!-- High-Res Diagram Showcase -->
+      <div class="glass-panel p-4 sm:p-8 rounded-3xl mb-12 border border-slate-200 shadow-lg">
+        <div class="text-xs font-mono text-slate-500 mb-3 flex items-center justify-between font-semibold">
+          <span>Figure 1: GridMind AI Closed-Loop Power Dispatch Architecture</span>
+          <span class="text-blue-600 font-bold">Patent Pending • WireFree Charge</span>
+        </div>
+        <img src="assets/GridMind_Architecture.png" alt="GridMind Architecture" class="w-full h-auto rounded-2xl border border-slate-200">
+      </div>
+
+      <!-- Hardware Components -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Hardware Photo 1: Lab Prototype -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <img src="assets/wpt_prototype.jpg" alt="Lab Prototype" class="w-full h-48 object-cover rounded-xl border border-slate-200 mb-4 shadow-sm">
+            <h4 class="text-lg font-bold text-slate-900">Static Lab Bench Prototype</h4>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Low-power 85 kHz resonant demonstration bench. Built with custom copper Litz coils, ZVS resonant inverter, and Foreign Object Detection (FOD) sensor loop.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-mono text-emerald-600 font-bold">
+            Validated Coupling: 85–92% η
+          </div>
+        </div>
+
+        <!-- Hardware Photo 2: 85 kHz Litz Coil -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <img src="assets/litz_coil.jpg" alt="85 kHz Litz Coil" class="w-full h-48 object-cover rounded-xl border border-slate-200 mb-4 shadow-sm">
+            <h4 class="text-lg font-bold text-slate-900">85 kHz Litz Wire Resonant Coil</h4>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Concentric multi-strand Litz wire designed to eliminate the high-frequency skin effect. Backed by ferrite tiles to guide magnetic flux away from passengers.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-mono text-blue-600 font-bold">
+            Compliant: SAE J2954 standard
+          </div>
+        </div>
+
+        <!-- GridMind AI Card -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-4 shadow-sm">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">GridMind AI Telemetry</h4>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Cloud dispatch engine that forecasts highway EV traffic load, modulates substation power draw, orchestrates Battery Energy Storage (BESS), and verifies vehicle authentication via 5G V2X.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200 text-xs font-mono text-indigo-600 font-bold">
+            Substation Balancing & Toll Integration
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- B2B FLEET ROI CALCULATOR -->
+    <section id="economics" class="py-24 bg-dot-pattern border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold">Financial Impact Analysis</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2 tracking-tight">
+            Commercial Fleet ROI Calculator
+          </h2>
+          <p class="text-slate-600 mt-4 text-base">
+            Quantify the revenue boost and battery downsizing savings for your commercial taxi or delivery fleet.
+          </p>
+        </div>
+
+        <div class="glass-panel p-8 sm:p-12 rounded-3xl max-w-4xl mx-auto border border-slate-200 shadow-xl">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            
+            <!-- Fleet Controls -->
+            <div class="space-y-6">
+              
+              <div>
+                <label class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Vehicle Category</label>
+                <select id="calcVehicleType" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 font-semibold focus:outline-none focus:border-blue-600 shadow-sm">
+                  <option value="cab">Electric Sedans / Cabs (BluSmart, Commercial Fleets)</option>
+                  <option value="van">Electric Cargo Vans (Delivery Logistics)</option>
+                  <option value="bus">Electric City Buses (Public Transit)</option>
+                </select>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono text-slate-700 mb-2 font-semibold">
+                  <span>Number of Fleet Vehicles</span>
+                  <span id="calcFleetVal" class="text-blue-600 font-bold">25 EVs</span>
+                </div>
+                <input type="range" id="calcFleetSize" min="5" max="250" value="25" step="5">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono text-slate-700 mb-2 font-semibold">
+                  <span>Daily Distance per Vehicle</span>
+                  <span id="calcKmVal" class="text-emerald-600 font-bold">200 km/day</span>
+                </div>
+                <input type="range" id="calcDailyKm" min="80" max="450" value="200" step="10">
+              </div>
+
+            </div>
+
+            <!-- Calculated Metrics Cards -->
+            <div class="grid grid-cols-2 gap-4">
+              
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between shadow-sm">
+                <span class="text-xs font-mono text-slate-500 uppercase font-bold">Idle Hours Saved</span>
+                <span id="calcOutHoursSaved" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono mt-2">66 hrs/day</span>
+                <span class="text-[11px] text-slate-500 mt-1">Extra driving shift time</span>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200 flex flex-col justify-between shadow-sm">
+                <span class="text-xs font-mono text-emerald-800 uppercase font-bold">Annual Revenue Boost</span>
+                <span id="calcOutAnnualRev" class="text-2xl sm:text-3xl font-extrabold text-emerald-600 font-mono mt-2">₹98.0 L</span>
+                <span class="text-[11px] text-slate-600 mt-1">From extra paid trips</span>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between shadow-sm">
+                <span class="text-xs font-mono text-slate-500 uppercase font-bold">Battery Downsizing</span>
+                <span id="calcOutBatterySaved" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono mt-2">₹30.0 L</span>
+                <span class="text-[11px] text-slate-500 mt-1">CapEx saved per replacement</span>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-blue-50/60 border border-blue-200 flex flex-col justify-between shadow-sm">
+                <span class="text-xs font-mono text-blue-800 uppercase font-bold">Payback Timeline</span>
+                <span id="calcOutPaybackMonths" class="text-2xl sm:text-3xl font-extrabold text-blue-600 font-mono mt-2">6.2 Mo.</span>
+                <span class="text-[11px] text-slate-600 mt-1">Full investment recovery</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 text-xs font-mono text-slate-700 flex items-center justify-between font-semibold">
+            <span>Model based on Indian commercial EV fleet operational data & NITI Aayog benchmarks.</span>
+            <a href="#deploy" class="text-blue-600 font-bold hover:underline">Get Custom Audit →</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DEPLOY WITH US PORTAL -->
+    <section id="deploy" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full badge-glow text-xs font-mono mb-3 font-semibold">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-600"></i>
+          <span>Commercial Onboarding</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Deploy With Us
+        </h2>
+        <p class="text-slate-600 mt-4 text-base">
+          Whether you operate a commercial fleet, manage highway infrastructure concessions, design EV platforms, or invest in deep clean-tech, connect with our engineering team directly.
+        </p>
+      </div>
+
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl max-w-4xl mx-auto border border-blue-200 shadow-xl relative">
+        
+        <!-- Track Selector Tabs -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-8">
+          <button data-track="fleet" class="deploy-track-btn active px-3.5 py-2.5 rounded-xl border border-blue-600 bg-blue-50 text-blue-600 text-xs font-mono font-semibold shadow-sm transition-all">
+            🚖 Fleet Pilot
+          </button>
+          <button data-track="highway" class="deploy-track-btn px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 text-xs font-mono font-semibold hover:border-blue-500 hover:text-blue-600 transition-all">
+            🛣️ Highway EPC
+          </button>
+          <button data-track="oem" class="deploy-track-btn px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 text-xs font-mono font-semibold hover:border-blue-500 hover:text-blue-600 transition-all">
+            🚗 OEM Licensing
+          </button>
+          <button data-track="investor" class="deploy-track-btn px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 text-xs font-mono font-semibold hover:border-blue-500 hover:text-blue-600 transition-all">
+            💼 Strategic Capital
+          </button>
+        </div>
+
+        <!-- Dynamic Header info -->
+        <div class="mb-8 p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <h3 id="deployTrackTitle" class="text-lg font-bold text-slate-900">B2B Commercial Fleet Operator Pilot</h3>
+          <p id="deployTrackDesc" class="text-xs text-slate-600 mt-1 leading-relaxed">
+            Deploy static wireless charging pads at your depot or pilot opportunity charging on fixed city corridors to eliminate vehicle downtime.
+          </p>
+        </div>
+
+        <!-- The Actual Form (Direct mail to elamaranyuvaraj@gmail.com) -->
+        <form id="deployInquiryForm" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Your Name</label>
+              <input type="text" id="fpName" required placeholder="e.g. Anand Sharma" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Work Email</label>
+              <input type="email" id="fpEmail" required placeholder="anand@company.com" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Company / Organization</label>
+              <input type="text" id="fpOrg" required placeholder="e.g. SmartFleet Mobility Pvt Ltd" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Target Timeline</label>
+              <select id="fpTimeline" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm font-medium">
+                <option value="Immediate Pilot (Next 1-3 Months)">Immediate Pilot (Next 1-3 Months)</option>
+                <option value="Medium-term Trial (3-6 Months)">Medium-term Trial (3-6 Months)</option>
+                <option value="Strategic Research & Investment">Strategic Investment / Capital</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label id="deployDynamicLabel" class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Estimated Fleet Size (No. of Electric Cabs/Vans)</label>
+            <input type="text" id="deployDynamicInput" placeholder="e.g. 50 Electric Sedans / 20 Delivery Vans" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-700 uppercase mb-2 font-bold">Project Notes / Specific Inquiries</label>
+            <textarea id="fpMessage" rows="3" placeholder="Tell us about your route profile, depot location, or commercial discussion points..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm"></textarea>
+          </div>
+
+          <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-sm tracking-wide uppercase flex items-center justify-center space-x-2 shadow-md">
+            <span>Submit Proposal to Engineering Team</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+
+          <p class="text-[11px] font-mono text-center text-slate-500 mt-2">
+            Inquiries are routed directly to: <strong>elamaranyuvaraj@gmail.com</strong>
+          </p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- SUCCESS MODAL POPUP -->
+    <div id="deployModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+      <div class="glass-panel p-8 rounded-3xl max-w-lg w-full border border-blue-200 shadow-2xl relative">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 mx-auto font-bold shadow-sm">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-center text-slate-900">Application Dispatched</h3>
+        <p class="text-slate-600 text-xs text-center mt-2 mb-6">
+          Your proposal has been logged and sent directly to <strong>elamaranyuvaraj@gmail.com</strong>.
+        </p>
+
+        <div id="deploySummaryContent" class="mb-6"></div>
+
+        <button id="btnCloseDeployModal" class="w-full btn-primary py-3 rounded-xl text-sm font-bold">
+          Close Confirmation
+        </button>
+      </div>
+    </div>
+
+    <!-- LEADERSHIP & TECHNICAL TEAM (CLEAN COMMERCIAL PRESENTATION) -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-mono uppercase tracking-widest text-blue-600 font-bold">Engineering Leadership</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">
+          Executive & Hardware Engineering
+        </h2>
+        <p class="text-slate-600 mt-2 text-sm">
+          Specialized in high-frequency resonance, power electronics, and high-speed V2X telemetry.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        
+        <div class="glass-panel p-6 rounded-2xl border-t-4 border-blue-600">
+          <div class="text-blue-600 font-mono text-xs mb-1 font-bold">Founder & Chief Engineer</div>
+          <div class="text-lg font-bold text-slate-900">Elamaran Y</div>
+          <div class="text-xs text-slate-500 mt-0.5">Head of Hardware Systems</div>
+          <p class="text-xs text-slate-600 mt-3 leading-relaxed">High-frequency coil geometry, ZVS resonant inverter topology & electromagnetic field modeling.</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border-t-4 border-emerald-600">
+          <div class="text-emerald-600 font-mono text-xs mb-1 font-bold">Power Electronics & RF</div>
+          <div class="text-lg font-bold text-slate-900">Systems & Switching Team</div>
+          <div class="text-xs text-slate-500 mt-0.5">Sub-Road Coils & Inverters</div>
+          <p class="text-xs text-slate-600 mt-3 leading-relaxed">85 kHz GaN/SiC switching modules, resonance tuning networks & multi-kW bench prototypes.</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border-t-4 border-indigo-600">
+          <div class="text-indigo-600 font-mono text-xs mb-1 font-bold">V2X & Cloud Intelligence</div>
+          <div class="text-lg font-bold text-slate-900">GridMind Software Team</div>
+          <div class="text-xs text-slate-500 mt-0.5">Telemetry & Load Management</div>
+          <p class="text-xs text-slate-600 mt-3 leading-relaxed">5G V2X communication, automated FASTag per-kWh billing & substation load dispatch algorithms.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER (STANDALONE COMPANY FOOTER) -->
+  <footer class="bg-white border-t border-slate-200 py-12 text-slate-600 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2 text-slate-900 font-bold text-sm">
+        <i data-lucide="zap" class="w-4 h-4 text-blue-600"></i>
+        <span>WireFree Charge Technologies</span>
+      </div>
+      <div class="text-slate-500">
+        Next-Generation Wireless EV Mobility • Inquiries: <a href="mailto:elamaranyuvaraj@gmail.com" class="text-blue-600 hover:underline font-semibold">elamaranyuvaraj@gmail.com</a>
+      </div>
+      <div class="flex space-x-5 text-slate-600 font-semibold">
+        <a href="#technology" class="hover:text-blue-600">Technology</a>
+        <a href="#simulator" class="hover:text-blue-600">Simulator</a>
+        <a href="#deploy" class="hover:text-blue-600">Deploy With Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/formspace.js"></script>
+</body>
+</html>
